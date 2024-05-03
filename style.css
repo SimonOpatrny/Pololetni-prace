@@ -1,0 +1,102 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: -7px;
+    background-color: #fdf5ce; 
+}
+
+header {
+    background-color: #f2c924; 
+    padding: 20px;
+    text-align: center;
+}
+
+.text {
+        padding-left: 20px; /* Změňte hodnotu podle potřeby */
+}
+
+
+header h1 {
+    margin: 0;
+    color: #4d2600; 
+}
+
+nav {
+    background-color: #4d2600; 
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline; /* text vedle sebe */
+    margin-right: 20px;  /* mezery */
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+section {
+    padding: 15px;  /* odsazení */
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+    gap: 36px;
+}
+
+.product {
+    display: inline-block; /* menší mezery pod obrazky */
+    text-align: center;  
+    padding: 15px; 
+    background-color: #ffeeba; 
+    border-radius: 10px; /* Zaoblené rohy */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.product img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgb(108 6 114 / 51%);
+    transition: transform 0.3s ;
+}
+
+.product img:hover {
+    transform: scale(1.1); /* Pro počítač, když najedu na obrázek tak se zvětší */
+}
+
+.product h3 {
+    margin-top: 20px;
+}
+
+.product p {
+    margin-top: 5px;
+    color: #4d2600; /* Hnědá barva */
+}
+
+footer {
+    background-color: #4d2600; /* Hnědá barva */
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin-top: 130px;
+}
+
+/* Media dotazy pro mobilní zařízení */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    .product {
+        width: 93%; /* Jeden obrázek na celou šířku */
+    }
+}
+
