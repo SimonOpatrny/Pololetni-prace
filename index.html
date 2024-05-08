@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prodej medu</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <h1>Vítejte v našem obchodě s medem!</h1>
+             <img src="/Bee.png" alt="Včelka" style="width: 30px; height: 30px;">
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#about">O nás</a></li>
+            <li><a href="#products">Produkty</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+        </ul>
+    </nav>
+    <section id="about">
+    </section>
+    <div class="text">
+        <h2>O nás</h2>
+        <h4>Vítejte na našem webu, kde nabízíme kvalitní med z našich vlastních včelích úlů.</h4>
+        <h2>Produkty k zakoupení</h2>
+
+    </div>
+    <section id="products">
+        <div class="product">
+            <img src="/kremovy.png" alt="Med 1"
+
+            onclick="enlargeImage(this, '150 Kč')">
+            <h3></h3>
+            <p>Krémový med</p>
+        </div>
+        <div class="product">
+            <img src="/maly med.png" alt="Med 2" onclick="enlargeImage(this, '180 Kč')">
+            <h3></h3>
+            <p>Malý med</p>
+        </div>
+        <div class="product">
+            <img src="/medvěd.png" alt="Med 3" onclick="enlargeImage(this, '200 Kč')">
+            <h3></h3>
+            <p>Medvěd med</p>
+        </div>
+        <div class="product">
+            <img src="/medovina.png" alt="Med 4" onclick="enlargeImage(this, '160 Kč')">
+            <h3></h3>
+            <p>Medovina</p>
+        </div>
+        <div class="product">
+            <img src="/med_shampooo.png" alt="Med 5" onclick="enlargeImage(this, '220 Kč')">
+            <h3></h3>
+            <p>Shampooo med</p>
+        </div>
+    </section>
+
+    <script>
+        function enlargeImage(img, cena) {
+            img.style.transform = "scale(1.1)";
+            img.nextElementSibling.style.color = "purple"; 
+            img.nextElementSibling.innerHTML = "Cena: " + cena + " za sklenici"; 
+        }
+    </script>
+    
+    <section id="contact">
+        <h2>Kontakt</h2>
+    </section>
+    <div class="text"> 
+        <h4> Pro velké objednávky medu nebo dotazy nás kontaktujte na emailové adrese: info@prodejmedu.cz</h4>
+        <h4> Nebo zavolejte na číslo +420 485 247 648</h4>
+    </div>
+
+    <footer>
+        <p>Prodej medu od roku 2024 </p>
+    </footer>
+
+    <style>
+        /* Styl pro létající včelku */
+        #bee {
+            position: absolute;
+            top: 50%;
+            left: -50px; /* Startuje mimo obrazovku vlevo */
+            width: 100px; /* Změňte šířku obrázku podle potřeby */
+            height: auto; /* Automaticky upravuje výšku podle šířky */
+            transition: transform 3s linear; /* Délka letu přes obrazovku */
+        }
+    </style>
+
+    <img id="bee" src="/Bee.png" alt="Včelka">
+
+    <script>
+        // Funkce pro simulaci letu včelky
+        function flyBee() {
+            // Získejte včelku podle ID
+            var bee = document.getElementById('bee');
+
+            // Nastavte animaci letu přes obrazovku
+            bee.style.transform = 'translateX(100vw)'; /* Létá zleva doprava přes celou obrazovku */
+
+            // Resetujte pozici včelky, když dokončí let
+            setTimeout(function () {
+                bee.style.transform = 'translateX(0)'; /* Vrátí se na začátek */
+            }, 3000); /* Délka letu 5 sekund (změňte podle potřeby) */
+        }
+
+        // Spusťte let včelky každých 12 sekund
+        setInterval(flyBee, 12000);
+    </script>
+    
+</body>
+</html>
